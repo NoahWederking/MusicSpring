@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MUSIC</title>
+</head>
+<body>
+<h1 style="color: red">Sut tissmand</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Best Album</th>
+            <th>Record Label</th>
+        </tr>
+    </thead>
+        <tbody>
+        <tr th:each="musician: ${musician}">
+            <td th:text="${musician.id}"/>
+            <td th:text="${musician.name}"/>
+            <td th:text="${musician.best_album}"/>
+            <td th:text="${musician.record_label}"/>
+        </tr>
+        </tbody>
+</table>
+
+</body>
+</html>
