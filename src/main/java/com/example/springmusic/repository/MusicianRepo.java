@@ -19,4 +19,9 @@ public class MusicianRepo {
         RowMapper<Musician> rowMapper = new BeanPropertyRowMapper<>(Musician.class);
         return template.query(sql,rowMapper);
     }
+
+    public void addMusician(Musician musician){
+        String sql = "INSERT INTO musician (id, name, best_album, record_label) VALUES (?, ?, ?, ?)";
+        template.update(sql, musician.getId(), musician.getName(), musician.getBest_album(), musician.getRecord_label());
+    }
 }

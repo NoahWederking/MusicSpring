@@ -15,5 +15,9 @@ public class MusicianService {
     public List<Musician> fetchAll(){
         return musicianRepo.fetchAll();
     }
+    public void addMusician(Musician musician){
+        musicianRepo.addMusician(musician);
+    }
+
 
 }

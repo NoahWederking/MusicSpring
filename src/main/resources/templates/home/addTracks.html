@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="MyCSS.css">
+    <title>Title</title>
+</head>
+<body>
+<h1>Adding Tracks</h1>
+
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Tracks 1</th>
+        <th>Tracks 2</th>
+        <th>Tracks 3</th>
+        <th>Tracks 4</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="album:${album}">
+        <td th:text="${album.id}"/>
+        <td th:text="${album.track_1}"/>
+        <td th:text="${album.track_2}"/>
+        <td th:text="${album.track_3}"/>
+        <td th:text="${album.track_4}"/>
+    </tr>
+    </tbody>
+</table>
+
+
+
+<form action=""></form>
+
+</body>
+</html>
