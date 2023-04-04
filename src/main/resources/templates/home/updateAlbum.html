@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>UPDATING ALBUM</title>
 </head>
 <body>
-$END$
+<h1>UPDATING ALBUM</h1>
+
+
+<form action="/updateAlbum" method="post">
+  <input type="text" name="track_1" th:value="${album.track_1}">
+  <input type="text" name="track_2" th:value="${album.track_2}">
+  <input type="text" name="track_3" th:value="${album.track_3}">
+  <input type="text" name="track_4" th:value="${album.track_4}">
+  <input type="submit" value="SAVE">
+</form>
+
 </body>
 </html>

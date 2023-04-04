@@ -14,3 +14,17 @@ tr:nth-child(even){
     background-color: lightgrey;
 
 }
+.btn{
+    border: none;
+    color: blue;
+    padding: 5px 5px;
+    text-align: center;
+}
+
+#btn-editAlbum{
+    color: black;
+}
+#btn-deleteAlbum{
+    color: blue;
+}
+

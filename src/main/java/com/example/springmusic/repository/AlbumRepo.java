@@ -29,4 +29,22 @@ public class AlbumRepo {
         template.update(sql, album.getId(), album.getTrack_1(), album.getTrack_2(), album.getTrack_3(),
                 album.getTrack_4());
     }
+
+    public Album findAlbumById(int id){
+        String sql =("SELECT * FROM track WHERE id = ?");
+        RowMapper<Album> rowMapper = new BeanPropertyRowMapper<>(Album.class);
+        Album album = template.queryForObject(sql, rowMapper, id);
+        return album;
+    }
+
+    public void updateAlbum(int id, Album album){
+        String sql = "UPDATE track SET track_1 = ?, track_2 = ?, track_3 = ?, track_4 = ? WHERE id = ?";
+        template.update(sql,album.getTrack_1(), album.getTrack_2(), album.getTrack_3(), album.getTrack_4(),album.getId());
+    }
+
+
+    public boolean deleteAlbum(int id){
+        String sql = "DELETE FROM track WHERE id = ?";
+        return template.update(sql, id) > 0;
+    }
 }

@@ -24,4 +24,12 @@ public class MusicianRepo {
         String sql = "INSERT INTO musician (id, name, best_album, record_label) VALUES (?, ?, ?, ?)";
         template.update(sql, musician.getId(), musician.getName(), musician.getBest_album(), musician.getRecord_label());
     }
+
+
+    public Musician findMusicianById(int id){
+    String sql = "SELECT * FROM musician WHERE id = ?";
+    RowMapper<Musician> rowMapper = new BeanPropertyRowMapper<>(Musician.class);
+    Musician musician = template.queryForObject(sql, rowMapper, id);
+    return musician;
+    }
 }

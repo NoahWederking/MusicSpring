@@ -6,14 +6,14 @@
     <link rel="stylesheet" type="text/css" href="MyCSS.css">
 </head>
 <body>
-<h1 style="color: red">Røv</h1>
+<h1 style="color: red">Smuk Røv Music</h1>
 
 
 <a href="/create">
     <button class="btn-create, btn" id="btn-create">Create a new musician</button>
 </a>
 
-<a href="/viewTracks">
+<a href="/seeTracks">
     <button class="btn-create, btn" id="btn-viewalbums">Add albums</button>
 </a>
 
@@ -28,11 +28,16 @@
     </thead>
         <tbody>
         <tr th:each="musician: ${musician}">
-            <td th:text="${musician.id}"/>
-            <td th:text="${musician.name}"/>
-            <td th:text="${musician.best_album}"/>
-            <td th:text="${musician.record_label}"/>
-        </tr>
+                <td th:text="${musician.id}"/>
+                <td th:text="${musician.name}"/>
+                <td th:text="${musician.best_album}"/>
+                <td th:text="${musician.record_label}"/>
+                <td>
+                    <a th:href="@{}""></a>
+
+
+                </td>
+            </tr>
         </tbody>
 </table>
 

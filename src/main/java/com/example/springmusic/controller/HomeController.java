@@ -17,20 +17,13 @@ import java.util.List;
 public class HomeController {
     @Autowired
     MusicianService musicianService;
-    @Autowired
-    AlbumService albumService;
+
 
     @GetMapping("/")
     public String index(Model model){
         List<Musician> musicianList = musicianService.fetchAll();
         model.addAttribute("musician", musicianList);
         return "home/index";
-    }
-    @GetMapping("/viewTracks")
-    public String index1(Model model){
-        List<Album> albumList = albumService.fetchAll();
-        model.addAttribute("album", albumList);
-        return "home/addTracks";
     }
 
 
@@ -45,15 +38,10 @@ public class HomeController {
         return "redirect:/";
     }
 
-    @GetMapping("/viewAlbums")
-    public String addAlbumTracks(){
-        return "home/viewAlbums";
-    }
-    @PostMapping("/addTheTracks")
-    public String addTheTracks(@ModelAttribute Album album){
-        albumService.addAlbum(album);
-        return "redirect:/";
-    }
+
+
+
+
 
 
 

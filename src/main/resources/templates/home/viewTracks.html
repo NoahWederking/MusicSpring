@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="MyCSS.css">
@@ -8,6 +8,10 @@
 <body>
 <h1>Adding Tracks</h1>
 
+
+<a href="/addAlbum">
+    <button class="btn-create, btn" id="btn-viewalbums">Add albums</button>
+</a>
 
 <table>
     <thead>
@@ -27,13 +31,20 @@
         <td th:text="${album.track_2}"/>
         <td th:text="${album.track_3}"/>
         <td th:text="${album.track_4}"/>
+        <td>
+            <a th:href="@{'/editAlbum/' + ${album.id}}">
+                <button class="btn-editAlbum" id="btn-editAlbum">Edit Album</button>
+            </a>
+            <a th:href="@{'/deleteAlbum/' + ${album.id}}">
+                <button class="btn-deleteAlbum" id="btn-deleteAlbum">Delete Album</button>
+            </a>
+        </td>
     </tr>
     </tbody>
 </table>
 
 
 
-<form action=""></form>
 
 </body>
 </html>
